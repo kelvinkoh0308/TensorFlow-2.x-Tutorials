@@ -55,7 +55,7 @@ def celoss_zeros(logits):
     # [b] = [1, 1, 1, 1,]
     # loss = tf.keras.losses.categorical_crossentropy(y_pred=logits,
     #                                                y_true=tf.zeros_like(logits))
-    return tf.reduce_mean(logits)
+    return -tf.reduce_mean(logits)
 
 
 def gradient_penalty(discriminator, batch_x, fake_image):
